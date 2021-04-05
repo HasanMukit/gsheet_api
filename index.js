@@ -85,27 +85,26 @@ setTimeout(function() {
 // doPost test
 async function getData(input) {
   
-  const response = await fetch(apiUrl, {
-        method: 'POST', 
-        mode: 'no-cors',
-        cache: 'no-cache',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        redirect: 'follow', 
-        body: JSON.stringify({email:input}) 
-      })
-        .then(d => {console.log(d)})
-  // axios({
-  //   method: 'post',
-  //   url: apiUrl,
-  //   mode: 'cors',
-  //   data: {
-  //     email: input
-  //   }
-  // })
-  //   .then(res => console.log(res))
-  //   .then(res => console.log(res))
+//   const response = await fetch(apiUrl, {
+//         method: 'POST', 
+//         mode: 'no-cors',
+//         cache: 'no-cache',
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         redirect: 'follow', 
+//         body: JSON.stringify({email:input}) 
+//       })
+//         .then(d => {console.log(d)})
+  axios({
+    method: 'post',
+    url: apiUrl,
+    mode: 'cors',
+    data: {
+      email: input
+    }
+  })
+    .then(res => console.log(res))
     
   
   
