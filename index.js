@@ -98,7 +98,7 @@ async function getData(input) {
         .then(d => {
         console.log(d)
       })
-
+              }
   // axios({
   //   method: 'post',
   //   url: apiUrl,
