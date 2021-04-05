@@ -1,3 +1,4 @@
+let mainData;
 let resultArry;
 const apiUrl = "https://script.google.com/macros/s/AKfycbwchVOxBVGBQslCB9dtkLhKyj4pyihAxsWCTUBqJgZqd1ipJ8zqrVLFncAe8nBGxZId/exec";
 
@@ -12,7 +13,7 @@ function searchFunc() {
     
     if(isEmailValid)
     {
-      getData(searchInput)
+      filterData(searchInput)
     }
     else
     {
@@ -24,13 +25,12 @@ function searchFunc() {
   
 }
 
-time()
-function time() {
-setTimeout(function() {
+
+function showUi() {
+
     document.body.classList.remove("loading-body")
     document.getElementsByClassName("spinner-box")[0].remove();
     document.getElementsByClassName("container-self")[0].style.display = "block";
-}, 500)
 
 }
 
@@ -38,18 +38,14 @@ setTimeout(function() {
 
   
 
-function getData(email) {
+
   fetch(apiUrl)
       .then(d => d.json())
       .then(d => {
-          const nonFilterJson = Object.values(d[0].data)          
-          resultArry = nonFilterJson.filter(function(r){
-          return r.email.toString().toLowerCase() === email.toString().toLowerCase()})
-          console.log(resultArry)
-          populateTable(resultArry)
-          
+          mainData = Object.values(d[0].data)    
+          showUi();
       });
-  }
+
 // let header = document.createElement("p");
 // fetch(apiUrl)
 //     .then(d => d.json())
@@ -113,4 +109,11 @@ function populateTable(resultArry) {
   subSrcCol.href = r.subSrc
   searchResultBox.appendChild(tr);
    });
+}
+
+function filterData(email) {
+  resultArry = mainData.filter(function(r){
+    return r.email.toString().toLowerCase() === email.toString().toLowerCase()})
+    console.log(resultArry)
+    populateTable(resultArry)
 }
