@@ -110,14 +110,6 @@ async function getData(input) {
   
 }
 
-// let header = document.createElement("p");
-// fetch(apiUrl)
-//     .then(d => d.json())
-//     .then(d => {
-//         header.innerHTML = d[0].status
-//         document.getElementById('cont').prepend(header)
-          
-//     });
 
 
 document.querySelector('.btn').addEventListener('click', searchFunc)
