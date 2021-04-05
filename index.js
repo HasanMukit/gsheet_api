@@ -94,7 +94,7 @@ async function getData(input) {
         },
         redirect: 'follow', 
         body: JSON.stringify({email:input}) 
-      }).then(data => data.json())
+      })
         .then(d => {console.log(d)})
   // axios({
   //   method: 'post',
