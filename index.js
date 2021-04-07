@@ -1,6 +1,6 @@
 let mainData;
 let resultArry;
-const apiUrl = "https://script.google.com/macros/s/AKfycbwchVOxBVGBQslCB9dtkLhKyj4pyihAxsWCTUBqJgZqd1ipJ8zqrVLFncAe8nBGxZId/exec";
+const apiUrl = "https://script.google.com/macros/s/AKfycbwdZTBK5kl2oGatLSrcHZwLDVxFV9IkNtQkJ5FZHKKoVdncZ0aUWqkrvslpOt8PoRf3/exec";
 
 
 
