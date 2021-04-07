@@ -1,6 +1,6 @@
 let mainData;
 let resultArry;
-const apiUrl = "https://script.google.com/macros/s/AKfycbwdZTBK5kl2oGatLSrcHZwLDVxFV9IkNtQkJ5FZHKKoVdncZ0aUWqkrvslpOt8PoRf3/exec";
+const apiUrl = "https://script.googleusercontent.com/a/macros/juicesupplycompany.com/echo?user_content_key=bDbUaXDNTtdpvCxu2go5fN0bCFgMWYix0evJRPifnlZUAWkyw-NieMdq6Yjh6SDJ7tvPqQMTtyAFlp0pAcqhnndBDkPfNPaSOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKCPN61pSWtBEo-3pL4KcNPpXa3lSn6LDfpoAPxoDu5zV_UqfL-Y46wCfhoWPEzgsVAy2I1HU31w99SnB9-8om8GhE9qLpiOqX731haNvAtO4ATnbAFsrdTOcHrPq4uP0P8u6PdwfFKo39z9Jw9Md8uu&lib=MWCVIWCdHMAb33AphfpbKETJdmpy7TQ7w";
 
 
 
