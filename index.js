@@ -1,7 +1,6 @@
 let mainData;
 let resultArry;
-const apiUrl = "https://script.googleusercontent.com/a/macros/juicesupplycompany.com/echo?user_content_key=bDbUaXDNTtdpvCxu2go5fN0bCFgMWYix0evJRPifnlZUAWkyw-NieMdq6Yjh6SDJ7tvPqQMTtyAFlp0pAcqhnndBDkPfNPaSOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKCPN61pSWtBEo-3pL4KcNPpXa3lSn6LDfpoAPxoDu5zV_UqfL-Y46wCfhoWPEzgsVAy2I1HU31w99SnB9-8om8GhE9qLpiOqX731haNvAtO4ATnbAFsrdTOcHrPq4uP0P8u6PdwfFKo39z9Jw9Md8uu&lib=MWCVIWCdHMAb33AphfpbKETJdmpy7TQ7w";
-
+const apiUrl = "https://script.googleusercontent.com/a/macros/juicesupplycompany.com/echo?user_content_key=NJ2IDOTdefuJgJrHT9c0nsparjplzzKVvm92_kFSe48PHxmr7hnEHV--taHVZOnjwBWoshCi2b3AVGmJDR7BiBU1VTYmYJZOOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKCPN61pSWtBEo-3pL4KcNPpXa3lSn6LDfpoAPxoDu5zVzmjbbMW9ZEiTq4_eFHiiEYGJVVrrcLn94tlJBvksOqimzBIu5f_SQ2y2dH5QhfK7s76CDEpq_XZZPpA76_vnHbHqLXJsnpwzNz9Jw9Md8uu&lib=MWCVIWCdHMAb33AphfpbKETJdmpy7TQ7w";
 
 
 function searchFunc() {
@@ -20,12 +19,9 @@ function searchFunc() {
       alert("Invalid Email")
     }  
   }
-
-
-  
 }
 
-
+//hide loading screen
 function showUi() {
 
     document.body.classList.remove("loading-body")
@@ -34,11 +30,7 @@ function showUi() {
 
 }
 
-// doPost test
-
-  
-
-
+//fetch data 
   fetch(apiUrl)
       .then(d => d.json())
       .then(d => {
@@ -46,14 +38,6 @@ function showUi() {
           showUi();
       });
 
-// let header = document.createElement("p");
-// fetch(apiUrl)
-//     .then(d => d.json())
-//     .then(d => {
-//         header.innerHTML = d[0].status
-//         document.getElementById('cont').prepend(header)
-          
-//     });
 
 
 document.querySelector('.btn').addEventListener('click', searchFunc)
@@ -85,11 +69,9 @@ function populateTable(resultArry) {
   let feinCol = tr.querySelector(".fien")
   let phnCol = tr.querySelector(".phn")
   let addCol = tr.querySelector(".addrs")
-  let subCol = tr.querySelector(".sub")
   let blcCol = tr.querySelector(".blc")
   let tlcCol = tr.querySelector(".tlc")
-  let localeCol = tr.querySelector(".locale")
-  let subSrcCol = tr.querySelector(".subSrc")
+  
 
   idCol.textContent = i+1;
   storNameCol.textContent = r.store
@@ -101,12 +83,13 @@ function populateTable(resultArry) {
   phnCol.textContent = r.phn 
   
   addCol.textContent = r.addrs
-  subCol.textContent = r.sub
+  
 
-  blcCol.href = r.blc
-  tlcCol.href = r.tlc
-  localeCol.textContent = r.locale
-  subSrcCol.href = r.subSrc
+  r.blc.trim().length > 0 ? blcCol.href = r.blc : blcCol.href ="javascript:alert('File Not Yet Available')";
+
+  r.tlc.trim().length > 0 ? tlcCol.href = r.tlc : tlcCol.href ="javascript:alert('File Not Yet Available')";
+ 
+  
   searchResultBox.appendChild(tr);
    });
 }
