@@ -62,8 +62,10 @@ function isEmail(email) {
 
 function populateTable(resultArry) {
   let searchResultBox = document.getElementById("searchResults");
+  searchResultBox.innerHTML = ''
   let templatetBox = document.getElementById("rowTemplate");
   let template = templatetBox.content;
+
 
 
   resultArry.forEach(function(r,i){
